@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <ul>
+          <li>
+            <i class="fa fa-home"></i>
+            <a routerLink="/dashboard" routerLinkActive="active" >
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-user-circle"></i>
+            <a routerLink="/profile" routerLinkActive="active" >
+              <span>Profile</span>
+            </a>
+          </li>
+          <li>
+            <i class="fa fa-heart-o	"></i>
+            <a routerLink="/favorite" routerLinkActive="active" >
+              <span>Favorite</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <div class="profile-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
