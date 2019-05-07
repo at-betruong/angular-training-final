@@ -1,0 +1,45 @@
+<header>
+  <app-header></app-header>
+  <ng-container *ngIf="router.url == '/'">
+    <app-slider></app-slider>
+  </ng-container>
+
+  <div class="title-page" *ngIf="router.url == '/child'">
+    <div class="inner inner4">List product children</div>
+  </div>
+
+  <div class="title-page" *ngIf="router.url == '/men'">
+    <div class="inner inner4">List product men</div>
+  </div>
+
+  <div class="title-page" *ngIf="router.url == '/women'">
+    <div class="inner inner4">List product women.</div>
+  </div>
+
+</header>
+
+<main class="page-content container">
+
+  <!-- exercise7: angular attribute direction -->
+  <ng-template>
+    <h4>Attribute Directive</h4>
+    <h5>Pick a hover color</h5>
+    <div>
+      <input type="radio" name="colors" (click)="color='lightgreen'">Green
+      <input type="radio" name="colors" (click)="color='yellow'">Yellow
+      <input type="radio" name="colors" (click)="color='cyan'">Cyan
+      <input type="radio" name="colors" (click)="color='green'">Green
+      <input type="radio" name="colors" (click)="color='pink'">Pink
+      <input type="radio" name="colors" (click)="color='purple'">Purple
+    </div>
+    <button [appHoverItem]="color">konichiwa</button>
+    <button [appHoverItem]="color" defaultColor="violet">sayyounara</button>
+  </ng-template>
+
+  <router-outlet></router-outlet>
+
+</main>
+
+<!-- Footer -->
+<app-footer></app-footer>
+<!-- Footer -->

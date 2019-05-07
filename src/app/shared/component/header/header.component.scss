@@ -1,0 +1,29 @@
+h1 {
+  text-transform: uppercase;
+}
+nav {
+  text-transform: uppercase;
+  background-color: #4c5a63;
+}
+.nav-tabs>li>a {
+  color: black;
+}
+#nav-logo {
+  width: 30px;
+  vertical-align: bottom;
+}
+.float-right{
+  float: right;
+  color: #5dffcd;
+  text-align: center;
+}
+.float-right>a {
+  color: rgba(255,255,255,.5);
+}
+.float-right>a:hover {
+  color: #fff;
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
