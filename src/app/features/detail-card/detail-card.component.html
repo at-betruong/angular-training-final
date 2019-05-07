@@ -1,0 +1,57 @@
+
+  <!-- Portfolio Item Heading -->
+  <h1 class="my-4">Page Heading
+    <small>Secondary Text</small>
+  </h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid img-card" src="{{infoCard?.img}}" alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">{{infoCard?.title}}</h3>
+      <p>{{infoCard?.desc}}</p>
+      <h3 class="my-3">Price:</h3>
+      <p>{{infoCard?.price}}</p>
+      <!-- <button class="btn btn-sm"
+        [ngClass]="{ 'disabled' : isSubmitting,
+                      'btn-outline-primary': !article.favorited,
+                      'btn-primary': article.favorited }"
+        (click)="toggleFavorite()">
+        <i class="ion-heart"></i> <ng-content></ng-content>
+      </button> -->
+      <button class="button button-like" id="item-card-{{infoCard?.id}}" (click)="addFavorite($event)">
+        <i class="fa fa-heart"></i>
+        <span>Add your favorite</span>
+      </button>
+    </div>
+
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <h3 class="my-4">Related Projects</h3>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mb-4" *ngFor="let itemCard of relativalCard">
+      <img class="img-fluid img-related" src="{{itemCard.img}}" alt="">
+      <a [routerLink]="['/detail-card', itemCard.id]" routerLinkActive="active">
+        {{itemCard.title}}
+      </a>
+      <div>{{itemCard.price}}</div>
+    </div>
+  </div>
+  <!-- /.row -->
+  <script>
+  $(document).foundation();
+  $(function() {
+    $('.button-like')
+      .bind('click', function(event) {
+        $(".button-like").toggleClass("liked");
+      })
+  });
+  </script>
+  

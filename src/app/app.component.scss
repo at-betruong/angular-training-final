@@ -1,0 +1,80 @@
+div.banner {
+  background-image: url("https://js.devexpress.com/Content/ImagesNew/Overview/angular-banner.png");
+  height: 180px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: white;
+  padding-top: 55px;
+}
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.page-content {
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+// .page-footer {
+//   position: fixed;
+//   background-color: #f1f3f5;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   height: 50px;
+//   text-align: center;
+//   line-height: 3;
+// }
+button {
+  margin: 50px;
+  border: 1px solid gray;
+  border-radius: 15px;
+}
+.card-news>div>img {
+  width: 348px;
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title-page {
+  background-image: url('../assets/images/bgr-img-title-page.png');
+  line-height: 300px;
+  // text-align: center;
+  padding-left: 162px;
+  font-family: fantasy;
+}
+
+.inner {
+  display: inline-block;
+  vertical-align: middle;
+  background:rgb(76, 90, 99);;
+  padding: 3px 5px;
+}
+
+.inner4 {
+  line-height: normal; /* Reset line-height for the child. */
+  background: none;
+  margin: 0 auto;
+  color: rgb(99, 56, 8);
+  font-size: xx-large;
+}
+
+
+// swiper{
+//   height: 250px;
+//   width: 80%;
+//   margin: auto;
+// }
+
+// .swiper-slide{
+//   img{
+//       width: 100%;
+//   }
+// }
