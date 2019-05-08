@@ -36,12 +36,11 @@ const routes: Routes = [
     {
       path: 'favorite',
       component: FavotiteComponent
+    },
+    {
+      path: '**',
+      component: NotFoundComponent,
     }
-    // ,
-    // {
-    //   path: '**',
-    //   component: NotFoundComponent,
-    // }
   ]
 
 }];
