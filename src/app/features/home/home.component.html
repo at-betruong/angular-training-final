@@ -1,6 +1,9 @@
 <ng-container *ngTemplateOutlet="sliderHome"></ng-container>
 
 <div class="box">
+  <h2>WOMEN</h2>
+  <h2>MEN</h2>
+  <h2>CHILDREN</h2>
     <div class="row">
       <div class="col-md-3" *ngFor="let itemCard of listProduct$">
         <div class="box-part text-center">
@@ -9,10 +12,11 @@
           <div  *ngIf="checkLogin" id="item-card-{{itemCard.id}}" class="heart" (click)="addFavorite($event)"></div>
           <div class="card-body">
             <div class="title">
-              <h4>{{itemCard.title }}</h4>
+              <h4>{{itemCard.title | wordLimit:13}}</h4>
             </div>
             <div class="text">
               <span>{{itemCard.price}}</span>
+              <h5>{{itemCard.desc | wordLimit:20}}</h5>
             </div>
           </div>
           <div class="card-footer">
