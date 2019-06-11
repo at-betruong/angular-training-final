@@ -1,28 +1,34 @@
 <ng-container *ngTemplateOutlet="sliderHome"></ng-container>
 
 <div class="box">
-  <h2>WOMEN</h2>
+  <!-- <h2>WOMEN</h2>
   <h2>MEN</h2>
-  <h2>CHILDREN</h2>
-    <div class="row">
-      <div class="col-md-3" *ngFor="let itemCard of listProduct$">
-        <div class="box-part text-center">
-          <!-- <i class="fa fa-instagram fa-3x" aria-hidden="true"></i> -->
-          <img src="{{itemCard.img}}" class="card-img-top" alt="...">
-          <div  *ngIf="checkLogin" id="item-card-{{itemCard.id}}" class="heart" (click)="addFavorite($event)"></div>
-          <div class="card-body">
-            <div class="title">
-              <h4>{{itemCard.title | wordLimit:13}}</h4>
-            </div>
-            <div class="text">
-              <span>{{itemCard.price}}</span>
-              <h5>{{itemCard.desc | wordLimit:20}}</h5>
-            </div>
-          </div>
-          <div class="card-footer">
-            <a [routerLink]="['/detail-card', itemCard.id]" routerLinkActive="active">View More</a>
-          </div>
+  <h2>CHILDREN</h2> -->
+  <div class="row">
+    <div class="col-md-3" *ngFor="let itemCard of listProduct$">
+      <ng-container [ngTemplateOutlet]="productByCategory"
+      [ngTemplateOutletContext]="{itemCard:itemCard}">
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ng-template #productByCategory let-itemCard="itemCard">
+    <div class="box-part text-center">
+      <!-- <i class="fa fa-instagram fa-3x" aria-hidden="true"></i> -->
+      <img src="{{itemCard.img}}" class="card-img-top" alt="...">
+      <div  *ngIf="checkLogin" id="item-card-{{itemCard.id}}" class="heart" (click)="addFavorite($event)"></div>
+      <div class="card-body">
+        <div class="title">
+          <h4>{{itemCard.title | wordLimit:13}}</h4>
+        </div>
+        <div class="text">
+          <span>{{itemCard.price}}</span>
+          <h5>{{itemCard.desc | wordLimit:20}}</h5>
         </div>
       </div>
+      <div class="card-footer">
+        <a [routerLink]="['/detail-card', itemCard.id]" routerLinkActive="active">View More</a>
+      </div>
     </div>
-</div>
+</ng-template>

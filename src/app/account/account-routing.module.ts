@@ -5,7 +5,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from '../auth/auth.guard';
 import { CanDeactivateGuard } from '../auth/can-deactivate.guard';
-import { CreateComponent } from '../auth/create/create.component';
+// import { CreateComonent } from '../auth/create/create.component';
 import { ProfileResolveGuard } from './profile-resolve.guard';
 import { FavotiteComponent } from './favotite/favotite.component';
 import { NotFoundComponent } from '../features/not-found/not-found.component';
@@ -29,18 +29,19 @@ const routes: Routes = [
       path: 'dashboard',
       component: DashboardComponent
     },
-    {
-      path: 'register',
-      component: CreateComponent
-    },
+    // {
+    //   path: 'register',
+    //   component: CreateComponent
+    // },
     {
       path: 'favorite',
       component: FavotiteComponent
-    },
-    {
-      path: '**',
-      component: NotFoundComponent,
     }
+    // ,
+    // {
+    //   path: '**',
+    //   component: NotFoundComponent,
+    // }
   ]
 
 }];
