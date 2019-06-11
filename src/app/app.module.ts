@@ -14,6 +14,7 @@ import { AccountComponent } from './account/account.component';
 import { AccountModule } from './account/account.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/core.module';
 // import { SwiperModule } from 'angular2-useful-swiper';
 
 
@@ -22,7 +23,7 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     FeaturesComponent,
     AuthComponent,
-    AccountComponent
+    // AccountComponent
   ],
   imports: [
     BrowserModule,
@@ -31,13 +32,14 @@ import { RouterModule } from '@angular/router';
     SharedModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule,
+    CoreModule,
     AuthModule,
-    AccountModule,
-    RouterModule
+    // AccountModule,
+    RouterModule,
+    AppRoutingModule
     // SwiperModule
   ],
-  providers: [FeaturesModule],
+  // providers: [FeaturesModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
