@@ -17,10 +17,6 @@ const routes: Routes = [
       {
         path: 'register',
         component: CreateComponent
-      },
-      {
-        path: '**',
-        component: NotFoundComponent
       }
     ]
 }];
