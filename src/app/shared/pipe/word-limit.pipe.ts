@@ -12,7 +12,7 @@ export class WordLimitPipe implements PipeTransform {
     if (value.length <= length) {
       return value;
     } else {
-      truncatedText = value.slice(0, length - 3 );
+      truncatedText = value.toString().slice(0, length - 3 );
     }
     return truncatedText + rest;
   }

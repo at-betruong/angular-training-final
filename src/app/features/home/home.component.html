@@ -1,21 +1,20 @@
 <ng-container *ngTemplateOutlet="sliderHome"></ng-container>
 
 <div class="box">
-  <!-- <h2>WOMEN</h2>
-  <h2>MEN</h2>
-  <h2>CHILDREN</h2> -->
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-3" *ngFor="let itemCard of listProduct$">
       <ng-container [ngTemplateOutlet]="productByCategory"
       [ngTemplateOutletContext]="{itemCard:itemCard}">
       </ng-container>
     </div>
-  </div>
+  </div> -->
+  <app-list-card namePage="Children" [listInfoProduct$]="child" [limit]=limit></app-list-card>
+  <app-list-card namePage="Men" [listInfoProduct$]="man" [limit]=limit></app-list-card>
+  <app-list-card namePage="Women" [listInfoProduct$]="women" [limit]=limit></app-list-card>
 </div>
 
-<ng-template #productByCategory let-itemCard="itemCard">
+<!-- <ng-template #productByCategory let-itemCard="itemCard">
     <div class="box-part text-center">
-      <!-- <i class="fa fa-instagram fa-3x" aria-hidden="true"></i> -->
       <img src="{{itemCard.img}}" class="card-img-top" alt="...">
       <div  *ngIf="checkLogin" id="item-card-{{itemCard.id}}" class="heart" (click)="addFavorite($event)"></div>
       <div class="card-body">
@@ -31,4 +30,4 @@
         <a [routerLink]="['/detail-card', itemCard.id]" routerLinkActive="active">View More</a>
       </div>
     </div>
-</ng-template>
+</ng-template> -->
