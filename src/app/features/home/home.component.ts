@@ -25,6 +25,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   idFavorite: any;
   favoriteList: Array<any> = [];
   listProduct$: any;
+  namePage: any;
+  limit: any;
 
   constructor(
     private api: ApiService,
@@ -40,41 +42,34 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.man = data.man;
       this.women = data.women;
       this.child = data.child;
-      data.man.slice(0, 4).forEach( item => {
-        this.products.push(item);
-      });
-      data.women.slice(0, 4).forEach( item => {
-        this.products.push(item);
-      });
-      data.child.slice(0, 4).forEach( item => {
-        this.products.push(item);
-      });
-      // data.women.forEach((item) => {
-      //   this.products.push(item);
-      // });
-      // data.child.forEach((item) => {
-      //   this.products.push(item);
-      // });
 
       // tslint:disable-next-line:no-shadowed-variable
       this.route.data.subscribe( item => {
         if (item.page === 'child') {
           this.listProduct$ =  this.child;
+          this.women = [];
+          this.man = [];
         } else if (item.page === 'men') {
           this.listProduct$ =  this.man;
+          this.child = [];
+          this.women = [];
         } else if (item.page === 'women') {
           this.listProduct$ =  this.women;
+          this.man = [];
+          this.child = [];
         } else {
           this.listProduct$ = this.products;
+          this.limit = 4;
         }
 
       });
 
     });
 
-    if (this.authService.isLoggedIn()) {
-      this.checkLogin = true;
-    }
+    // if (this.authService.isLoggedIn()) {
+    //   this.checkLogin = true;
+    // }
+
     // tslint:disable-next-line:only-arrow-functions
     // $(document).ready( function() {
     //   /* when a user clicks, toggle the 'is-animating' class */
@@ -95,9 +90,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     $event.target.classList.toggle('is_animating');
     this.favorite.addFavorite($event);
   }
-
-  // showColorFavorit(id: any, tag: any) {
-  // }
 
   ngOnDestroy() {
     this.subscribe.unsubscribe();
