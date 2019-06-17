@@ -4,6 +4,7 @@ import { FeaturesComponent } from './features.component';
 import { HomeComponent } from './home/home.component';
 import { DetailCardComponent } from './detail-card/detail-card.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ListCardComponent } from '../shared/component/list-card/list-card.component';
 
 const routes: Routes = [
   {
@@ -11,19 +12,16 @@ const routes: Routes = [
     component: FeaturesComponent,
     children: [
       {
-        path: 'men', // news/:id
-        component: HomeComponent,
-        data: {page: 'men'}
+        path: 'men',
+        component: ListCardComponent,
       },
       {
         path: 'women',
-        component: HomeComponent,
-        data: {page: 'women'}
+        component: ListCardComponent,
       },
       {
-        path: 'child', // news/:id
-        component: HomeComponent,
-        data: {page: 'child'}
+        path: 'child',
+        component: ListCardComponent,
       },
       {
         path: 'detail-card/:id',
@@ -31,7 +29,8 @@ const routes: Routes = [
       },
       {
         path: '',
-        component: HomeComponent
+        component: HomeComponent,
+        data: {page: 'home'}
       }
       // ,
       // {

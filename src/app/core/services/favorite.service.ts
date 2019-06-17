@@ -44,4 +44,20 @@ export class FavoriteService {
       }
     }
   }
+
+  removeFavorite($event) {
+    if (confirm('Do you want to give up your favorite?')) {
+      if (this.localer.getLocalStorage('favorite')) {
+        this.favoriteList = JSON.parse(this.localer.getLocalStorage('favorite'));
+      }
+      if (this.favoriteList) {
+        this.idFavorite = this.favoriteList.findIndex(item => item.user === this.localer.getSessionStorage('login'));
+      }
+      // tslint:disable-next-line:max-line-length
+      this.favoriteList[this.idFavorite].favoriteUser = this.favoriteList[this.idFavorite].favoriteUser.filter( item => item !== Number($event.target.id.substr(10)));
+      this.localer.saveLocalStorage('favorite', this.favoriteList);
+      $event.target.classList.remove('favorite');
+    }
+  }
+
 }
