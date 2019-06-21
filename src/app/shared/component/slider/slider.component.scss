@@ -10,18 +10,3 @@
     object-fit: cover;
   }
 }
-
-.carousel-inner {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-}
-
-.carousel-item {
-  height: -webkit-fill-available;
-}
-.carousel-caption {
-  font-size: 24px;
-  color: #f5a540;
-  text-shadow: 0.5px 0.5px 0 #fff, 0.5px 0.5px 0 #fff;
-}
