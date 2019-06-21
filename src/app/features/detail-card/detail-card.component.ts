@@ -16,7 +16,8 @@ export class DetailCardComponent implements OnInit, OnDestroy {
   infoCard: any;
   infoCart1: any;
   relativalCard: any;
-  checkLogin: any;
+  checkLogin = false;
+  checkFavorite: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -60,10 +61,13 @@ export class DetailCardComponent implements OnInit, OnDestroy {
     if (this.authService.isLoggedIn()) {
       this.checkLogin = true;
     }
+
   }
 
   addFavorite($event) {
     this.favorite.addFavorite($event);
+    this.checkFavorite = this.favorite.checkFavorite($event);
+    // disactive button when favorited
   }
 
 

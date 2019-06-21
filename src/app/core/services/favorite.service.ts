@@ -60,4 +60,14 @@ export class FavoriteService {
     }
   }
 
+  checkFavorite($event) {
+    if (this.localer.getLocalStorage('favorite')) {
+      this.favoriteList = JSON.parse(this.localer.getLocalStorage('favorite'));
+    }
+    if (this.favoriteList) {
+      this.idFavorite = this.favoriteList.findIndex(item => item.user === this.localer.getSessionStorage('login'));
+    }
+    return this.favoriteList[this.idFavorite].favoriteUser.includes(Number($event.target.id.substr(10)));
+  }
+
 }
