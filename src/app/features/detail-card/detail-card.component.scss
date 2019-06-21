@@ -33,50 +33,15 @@ a {
   transition: all ease 0.4s;
 }
 
-.button-like:focus {
-  background-color: transparent;
-}
-
-.button-like:focus .fa,
-.button-like:focus span {
-  color: #8a8a8a;
-}
-
-.button-like:hover {
-  border-color: #cc4b37;
-  background-color: transparent;
-}
-
-.button-like:hover .fa,
-.button-like:hover span {
+button:disabled,
+button[disabled]{
   color: #cc4b37;
-}
-
-.liked {
-  background-color: #cc4b37;
   border-color: #cc4b37;
+  background-color: transparent;
+  cursor: not-allowed;
 }
 
-.liked .fa,
-.liked span {
-  color: #fefefe;
-}
-
-.liked:focus {
-  background-color: #cc4b37;
-}
-
-.liked:focus .fa,
-.liked:focus span {
-  color: #fefefe;
-}
-
-.liked:hover {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-}
-
-.liked:hover .fa,
-.liked:hover span {
-  color: #fefefe;
+.my-4 {
+  padding-top: 40px;
+  color: #289628;
 }
