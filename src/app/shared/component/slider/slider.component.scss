@@ -10,3 +10,12 @@
     object-fit: cover;
   }
 }
+
+.carousel-item {
+  height: -webkit-fill-available;
+}
+.carousel-caption {
+  font-size: 24px;
+  color: rgb(25, 143, 21);
+  text-shadow: 0.5px 0.5px 0 #fff, 1px 1px 0 #fff;
+}
