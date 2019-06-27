@@ -15,6 +15,9 @@ import { AccountModule } from './account/account.module';
 import { SharedModule } from './shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { CoreModule } from './core/core.module';
+import { TooltipComponent } from './develop/tooltip/tooltip.component';
+import { DevelopComponent } from './develop/develop.component';
+import { DevelopModule } from './develop/develop.module';
 // import { SwiperModule } from 'angular2-useful-swiper';
 
 
@@ -23,6 +26,7 @@ import { CoreModule } from './core/core.module';
     AppComponent,
     FeaturesComponent,
     AuthComponent,
+    DevelopComponent
     // AccountComponent
   ],
   imports: [
@@ -30,6 +34,7 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     FeaturesModule,
     SharedModule,
+    DevelopModule,
     HttpClientModule,
     ReactiveFormsModule,
     CoreModule,
