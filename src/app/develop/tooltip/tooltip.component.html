@@ -1,0 +1,18 @@
+<h2>
+  Page: tooltip works!
+</h2>
+<!-- EventEmitter -->
+<h4>1. EventEmitter</h4>
+<div class="zippy">
+  <div (click)="toggle()">Toggle</div>
+  <div [hidden]="!visible">
+    <ng-content></ng-content>
+  </div>
+</div>
+<!-- HTTP -->
+<h4>2. Observable: async</h4>
+<div><code>observable|async</code>:Time: {{ time | async }}</div>
+
+<!-- backgroung-clip: text -->
+<h4>3. Backgroung-clip</h4>
+<h5>Background-clip</h5>
