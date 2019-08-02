@@ -11,11 +11,13 @@ import { CookieService } from '../core/services/cookie.service';
 import { LocalerService } from '../core/services/localer.service';
 import { ApiService } from '../core/services/api.service';
 import { AuthService } from '../core/services/auth.service';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
